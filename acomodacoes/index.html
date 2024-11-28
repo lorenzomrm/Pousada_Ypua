@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acomodações - Quinta do Ypuã</title>
+     <!-- Favicon -->
+ <link rel="icon" href="https://static.wixstatic.com/media/b87f83_9f4625b043a944daaf5fddefc7d73d0e~mv2.png/v1/fill/w_80,h_80,al_c,q_85,enc_avif,quality_auto/logo-pousada-quinta-do-ypua.png" type="image/png"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Importação das fontes (Raleway) */
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o rodapé fique no final da página */
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 100px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #f4a261;
+        }
+
+        .reserve-btn {
+            padding: 10px 20px;
+            background-color: #f4a261;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reserve-btn:hover {
+            background-color: #e07b52;
+        }
+
+        /* Container para acomodações (flexbox para manter flexibilidade) */
+        .accommodation-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+            gap: 30px; /* Espaço entre as acomodações */
+            margin: 30px;
+        }
+
+        /* Cada item de acomodação */
+        .accommodation-item {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajuste do título e imagem */
+        .accommodation-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .accommodation-details h4 {
+            font-size: 24px; /* Tamanho maior para o título */
+            margin: 0;
+        }
+
+        /* Ajuste da imagem e descrição */
+        .image-and-description {
+            width: 100%;
+            height: 300px; /* Altura constante para a imagem */
+            background-color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-and-description img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .accommodation-details .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .accommodation-details .button-group button,
+        .accommodation-details .btn-reserve {
+            padding: 10px 20px;
+            background-color: #f4a261;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accommodation-details .button-group button:hover,
+        .accommodation-details .btn-reserve:hover {
+            background-color: #e07b52;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: auto; /* Garante que o rodapé fique no final da página */
+        }
+
+        /* Estilos para os campos de data */
+        .date-selector {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .date-selector input {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .show-dates-btn {
+            background-color: #f4a261;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .show-dates-btn:hover {
+            background-color: #e07b52;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://static.wixstatic.com/media/b87f83_9f4625b043a944daaf5fddefc7d73d0e~mv2.png/v1/fill/w_80,h_80,al_c,q_85,enc_avif,quality_auto/logo-pousada-quinta-do-ypua.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="../index.html">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Acomodações</a>
+            <a href="#">Contato</a>
+            <a href="#" class="reserve-btn">Reserve Já</a>
+        </nav>
+    </header>
+
+    <!-- Container para acomodação -->
+    <div class="accommodation-container">
+        <!-- Primeira acomodação -->
+        <div class="accommodation-item">
+            <div class="accommodation-details">
+                <!-- Título da acomodação acima da imagem -->
+                <h4>Casa nova - A Grande Novidade</h4>
+                
+                <!-- Imagem e descrição da acomodação -->
+                <div class="image-and-description">
+                    <img src="https://news.airbnb.com/wp-content/uploads/sites/4/2024/08/b5913129-4626-401a-83f3-9c025e9b3649.png?w=1200" alt="Imagem de Acomodações">
+                </div>
+
+                <div class="description">
+                    <p><strong>Camas:</strong> 1 Casal</p>
+                    <p><strong>Comodidades:</strong> Ar Condicionado, WiFi, TV, Frigobar, Ducha, Cozinha, Toalhas</p>
+                    <p><strong>A partir de:</strong> R$590</p>
+                </div>
+
+                <!-- Botões de data e reserva -->
+                <div class="button-group">
+                    <!-- Botão para mostrar os campos de datas -->
+                    <button class="show-dates-btn" onclick="toggleDateSelector(1)">Selecionar Datas</button>
+
+                    <!-- Formulário para selecionar as datas (inicialmente oculto) -->
+                    <div class="date-selector" id="dateSelector1">
+                        <label for="checkin1">Check-in:</label>
+                        <input type="date" id="checkin1" name="checkin">
+                        <label for="checkout1">Check-out:</label>
+                        <input type="date" id="checkout1" name="checkout">
+                    </div>
+
+                    <button class="btn-reserve">Reservar Agora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda acomodação -->
+        <div class="accommodation-item">
+            <div class="accommodation-details">
+                <h4>O Refúgio da Serra</h4>
+                <div class="image-and-description">
+                    <img src="https://fotos.vivadecora.com.br/decoracao-casa-de-campo-talude-com-pedra-natural-e-bancos-de-madeira-revistavd-211839-proportional-height_cover_medium.jpg" alt="Imagem de Acomodações 2">
+                </div>
+
+                <div class="description">
+                    <p><strong>Camas:</strong> 1 Casal, 1 Solteiro</p>
+                    <p><strong>Comodidades:</strong> Ar Condicionado, WiFi, TV a cabo, Frigobar, Chuveiro Quente, Toalhas</p>
+                    <p><strong>A partir de:</strong> R$450</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="show-dates-btn" onclick="toggleDateSelector(2)">Selecionar Datas</button>
+
+                    <div class="date-selector" id="dateSelector2">
+                        <label for="checkin2">Check-in:</label>
+                        <input type="date" id="checkin2" name="checkin">
+                        <label for="checkout2">Check-out:</label>
+                        <input type="date" id="checkout2" name="checkout">
+                    </div>
+
+                    <button class="btn-reserve">Reservar Agora</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terceira acomodação -->
+        <div class="accommodation-item">
+            <div class="accommodation-details">
+                <h4>Casa das Estrelas</h4>
+                <div class="image-and-description">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/458052232.jpg?k=ddd42321d0c5c34a26f5f9b0a7f44873d93f5a91d06ab9a9b690eaa9296248b2&o=&hp=1" alt="Imagem de Acomodações 3">
+                </div>
+
+                <div class="description">
+                    <p><strong>Camas:</strong> 2 Solteiros</p>
+                    <p><strong>Comodidades:</strong> Ar Condicionado, WiFi, TV Smart, Microondas, Banheiro Privativo</p>
+                    <p><strong>A partir de:</strong> R$390</p>
+                </div>
+
+                <div class="button-group">
+                    <button class="show-dates-btn" onclick="toggleDateSelector(3)">Selecionar Datas</button>
+
+                    <div class="date-selector" id="dateSelector3">
+                        <label for="checkin3">Check-in:</label>
+                        <input type="date" id="checkin3" name="checkin">
+                        <label for="checkout3">Check-out:</label>
+                        <input type="date" id="checkout3" name="checkout">
+                    </div>
+
+                    <button class="btn-reserve">Reservar Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Quinta do Ypuã. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para mostrar/ocultar os campos de seleção de data
+        function toggleDateSelector(accommodationId) {
+            const dateSelector = document.getElementById('dateSelector' + accommodationId);
+            if (dateSelector.style.display === 'none' || dateSelector.style.display === '') {
+                dateSelector.style.display = 'flex';
+            } else {
+                dateSelector.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

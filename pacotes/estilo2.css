@@ -1,0 +1,141 @@
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    color: #333;
+    line-height: 1.6; /* Aumentar o espaçamento entre linhas de texto */
+    padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2a3d67; /* Cor de fundo mais vibrante */
+    color: white;
+    text-align: center;
+    padding: 60px 20px; /* Aumentar o padding para mais espaço */
+    border-radius: 10px;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px; /* Espaçamento entre título e descrição */
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 20px; /* Espaçamento abaixo da descrição */
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Container de pacotes */
+.container-pacotes {
+    display: inline-block;
+    width: 28%;
+    margin: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Efeito de hover nos pacotes */
+.container-pacotes:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo das imagens dos pacotes */
+.container-pacotes img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Títulos e preços */
+.package h3 {
+    font-size: 2em;
+    color: #2a3d67; /* Cor vibrante para os títulos */
+    margin-bottom: 10px;
+}
+
+.package p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.package .price {
+    font-size: 1.6em;
+    color: #28a745; /* Cor verde para o preço */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #28a745; /* Verde vibrante para o botão */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838; /* Verde mais escuro quando hover */
+}
+
+/* Estilo da página de compra realizada */
+.success-container {
+    background-color: #28a745; /* Cor de fundo verde para a página de sucesso */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.success-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.success-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.success-container a {
+    padding: 12px 25px;
+    background-color: #2a3d67; /* Cor vibrante de azul para o botão */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.success-container a:hover {
+    background-color: #1e2a3d; /* Azul mais escuro quando hover */
+}
