@@ -18,6 +18,7 @@
 
     <!-- Integrações internas -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="assets/js/script.js"></script>
 
     <!-- Integrações externos -->
@@ -71,13 +72,57 @@
                 </div>
             </div>
         </div>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://news.airbnb.com/wp-content/uploads/sites/4/2024/08/b5913129-4626-401a-83f3-9c025e9b3649.png?w=1200" alt="Image 1" class="active">
+                <img src="https://fotos.vivadecora.com.br/decoracao-casa-de-campo-talude-com-pedra-natural-e-bancos-de-madeira-revistavd-211839-proportional-height_cover_medium.jpg" alt="Image 2">
+                <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/458052232.jpg?k=ddd42321d0c5c34a26f5f9b0a7f44873d93f5a91d06ab9a9b690eaa9296248b2&o=&hp=1" alt="Image 3">
+                <img src="https://img.freepik.com/fotos-gratis/luxo-e-quarto-frio-no-hotel_1150-10902.jpg?t=st=1732823109~exp=1732826709~hmac=378cf450333c30bb559090bcafe95ddfbed795a837fb834d920ce4f0f09bdd99&w=1380" alt="Image 4">
+                
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+        <section class="texto1">
+            <h2>Bem-vindo à Pousada Quinta do Ypuã</h2>
+            <p>Seja bem-vindo à Pousada Quinta do Ypuã, o refúgio perfeito para quem busca relaxar com o som das ondas e a brisa do mar. Localizada à beira da praia, nossa pousada oferece a combinação ideal de conforto, hospitalidade e um cenário paradisíaco, onde você pode se desconectar da rotina e se conectar com a natureza.</p>
+            <div class="texto2">
+                <h2>Quem Somos</h2>
+                <p>A Pousada Quinta do Ypuã é mais do que um lugar para se hospedar: somos um pedacinho do paraíso criado para receber você com carinho e aconchego. Situada em uma localização privilegiada, de frente para o mar, proporcionamos uma experiência única, em que o azul do oceano e o dourado da areia fazem parte do seu dia a dia durante a estadia.</p>
+                <p>
+                    Com acomodações aconchegantes, atendimento personalizado e um ambiente tranquilo, nossa missão é fazer com que cada momento aqui seja especial. Seja para relaxar à sombra de um coqueiro, apreciar o pôr do sol à beira-mar ou se aventurar pelas belezas da região, estamos prontos para tornar sua visita inesquecível.</p>
+            </div>
+            <div class="texto3">
+                <h2>Nosso Compromisso</h2>
+                <p>Na Pousada Quinta do Ypuã, o seu conforto é a nossa prioridade. Oferecemos uma estrutura pensada para o seu bem-estar, desde quartos equipados para garantir boas noites de descanso até um delicioso café da manhã com sabores regionais para começar o dia da melhor forma.</p>
+                <p>Aqui, você pode mergulhar nas águas cristalinas da praia logo à sua porta, caminhar pela areia ao entardecer ou simplesmente relaxar e aproveitar a tranquilidade que só o som das ondas pode oferecer.</p>
+            </div>
 
+            <div class="texto4">
+                <h2>Deixe-se encantar pela magia da Pousada Quinta do Ypuã e venha viver momentos únicos à beira-mar. Estamos esperando por você!</h2>
+            </div>
+        </section>
+
+        <div class="rodape">
             <div class="conteudo">
                 <p>© Protótipo de Aplicação para Gestão Hoteleira</p>
                 <p>Todos os direitos reservados</p>
             </div>
         </div>
+        </div>
     </div>
 </body>
+<script>
+    let currentIndex = 0;
+
+function changeSlide(direction) {
+    const images = document.querySelectorAll('.carousel-images img');
+    images[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+
+    images[currentIndex].classList.add('active');
+}
+</script>
 
 </html>

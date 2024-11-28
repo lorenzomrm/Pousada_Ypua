@@ -1,0 +1,233 @@
+body, h1, h2, h3, p, ul, li, table, th, td, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ECE5DF; 
+}
+
+header .header-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px;
+    background-color: #DFC8B6;
+}
+
+header .logo #logo {
+    width: 20%;
+    display: block;
+    margin: auto;
+}
+
+header .login button {
+    background-color: #859B48; 
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .login button:hover {
+    background-color: #6F7F37; 
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #859B48; 
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #C4C7B6; 
+}
+
+main {
+    padding: 20px;
+}
+
+.welcome-summary {
+    margin-bottom: 30px;
+}
+
+.welcome-summary .summary-box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.welcome-summary .box {
+    flex: 1 1 calc(25% - 20px);
+    background-color: #ECE5DF; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.welcome-summary .box h3 {
+    font-size: 18px;
+    color: #859B48;
+}
+
+.welcome-summary .box p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #C4C7B6; 
+}
+
+.quick-links {
+    margin-bottom: 30px;
+}
+
+.menu {
+    padding: 1px;
+}
+
+.menu nav {
+    left: 50px;
+    text-align: auto;
+    padding: 12px;
+    background-color: #859B48;
+    border-radius: 8px;
+}
+
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding-left: 13%;
+}
+
+.quick-links button:hover {
+    background-color: #6F7F37; 
+}
+
+section.texto1 {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+section.texto1 h2 {
+    font-size: 2rem;
+    color: #859B48;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+section.texto1 p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+section.texto1 .texto2,
+section.texto1 .texto3,
+section.texto1 .texto4 {
+    margin-top: 30px;
+    padding: 15px;
+    border-right:  4px solid #859B48;
+    border-left:  4px solid #859B48;
+    background-color: #C4C7B6;
+    border-radius: 6px;
+}
+
+section.texto1 .texto4 h2 {
+    font-size: 1.8rem;
+    color: #859B48;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #C4C7B6; 
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+.image-container {
+    display: block;
+    object-fit: cover;
+    align-self: center;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    max-width: 100%;
+    display: none;
+}
+
+.carousel-images img.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

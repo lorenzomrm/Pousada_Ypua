@@ -201,11 +201,11 @@ tfoot td {
 
 .meio {
     display: flex;
-    padding: 20px;
+    padding: 10px;
 }
 
 .meio .conteudo {
-    min-height: calc(100vh - 172px);
+    min-height: calc(20vh - 43px);
 }
 
 .dashboard {
