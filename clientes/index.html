@@ -28,7 +28,7 @@
     <div class="geral">
         <div class="topo">
             <div class="conteudo">
-                <a href="/">
+                <a href="../index.html">
                     <span class="material-symbols-outlined icon-topo">Home</span>
                 </a>
                 <a href="/" class="link-logo">
@@ -43,7 +43,143 @@
         <div class="meio">
             <div class="conteudo modulo">
                 <h1>Gerenciamento de Clientes</h1>
-                <!-- Conteúdo aqui -->
+
+                <form>
+                    <input type="hidden" id="campo-id">
+                    <div class="item-form">
+                        <label for="campo-nome-completo">
+                            Nome completo
+                            <span class="campo-obrigatorio" title="Campo obrigatório">*</span>
+                        </label>
+                        <input type="text" id="campo-nome-completo" placeholder="Digite">
+                    </div>
+                    <div class="item-form">
+                        <label for="campo-data-nascimento">
+                            Data de nascimento
+                            <span class="campo-obrigatorio" title="Campo obrigatório">*</span>
+                        </label>
+                        <input type="date" id="campo-data-nascimento" placeholder="Digite">
+                    </div>
+                    
+                    <div class="item-form">
+                        <label for="campo-documento">
+                            RG/CPF
+                            <span class="campo-obrigatorio" title="Campo obrigatório">*</span>
+                        </label>
+                        <input type="text" id="campo-documento" maxlength="14" placeholder="Digite">
+                    </div>
+                    <div class="item-form">
+                        <label for="campo-pais">País:</label>
+                        <select id="campo-pais">
+                            <option value="">Selecione</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                        </select>
+                    </div>
+                    <div class="item-form">
+                        <label for="campo-estado">Estado:</label>
+                        <select id="campo-estado">
+                            <option value="">Selecione</option>
+                            <option value="Santa Catarina">Santa Catarina</option>
+                            <option value="São Paulo">São Paulo</option>
+                            <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        </select>
+                    </div>
+                    <div class="item-form">
+                        <label for="campo-cidade">Cidade:</label>
+                        <select id="campo-cidade">
+                            <option value="">Selecione</option>
+                            <option value="Tubarão">Tubarão</option>
+                            <option value="Florianópolis">Florianópolis</option>
+                            <option value="Laguna">Laguna</option>
+                        </select>
+                    </div>
+                    <div class="item-form item-check">
+                        <Strong>Fidelidade</Strong>
+                        <div class=" opcoes">
+                            <div>
+                                <input type="checkbox" id="campo-fidelidade" name="campo-fidelidade"> Fiel
+                                <label for="campo-fidelidade"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-form">
+                        <label for="campo-obs">Observações</label>
+                        <textarea id="campo-obs" maxlength="500"  rows="5"></textarea>
+                    </div>
+                    <div class="botoes">
+                        <button type="button" id="bt-salvar">Salvar</button>
+                        <button type="reset" id="bt-limpar">Limpar</button>
+                        <button type="button" id="bt-cancelar">Cancelar</button>
+                    </div>
+                    
+                    <div class="conteudo-pesquisa">
+                        <form id="form-pesquisa">
+                            <div class="item-form">
+                                <label for="pesquisa-geral">Pesquisar</label>
+                                <input type="text" id="pesquisa-geral" placeholder="Digite nome ou RG/CPF">
+                            </div>
+                            <div class="botoes">
+                                <button type="button" id="bt-pesquisar">Pesquisar</button>
+                                <button type="reset" id="bt-limpar-filtro">Restaurar</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+
+                <div class="conteudo-tabela">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome completo</th>
+                                <th>Data de nascimento</th>
+                                <th>RG/CPF</th>
+                                <th>País</th>
+                                <th>Estado</th>
+                                <th>Cidade</th>
+                                <th>Fidelidade</th>
+                                <th>Observações</th>
+                                <th class="col-acoes"></th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="9"><span id="total-registros">0</span> registros encontrados</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div id="modal-detalhes" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-modal">&times;</span>
+                        <h2>Perfil do Cliente</h2>
+                        <div id="detalhes-cliente">
+                            <img id="foto-cliente" src="/assets/imagens/default-photo.png" alt="Foto do Cliente">
+                            <button id="alterar-foto">Alterar Foto</button>
+                            <input type="file" id="input-foto" accept="image/*" style="display: none;">
+                            <p><strong>Nome:</strong> <span id="detalhe-nome"></span></p>
+                            <p><strong>Data de Nascimento:</strong> <span id="detalhe-nascimento"></span></p>
+                            <p><strong>RG/CPF:</strong> <span id="detalhe-documento"></span></p>
+                            <p><strong>País:</strong> <span id="detalhe-pais"></span></p>
+                            <p><strong>Estado:</strong> <span id="detalhe-estado"></span></p>
+                            <p><strong>Cidade:</strong> <span id="detalhe-cidade"></span></p>
+                            <p><strong>Fidelidade:</strong> <span id="detalhe-fidelidade"></span></p>
+                            <p><strong>Observações:</strong> <span id="detalhe-obs"></span></p>
+                        
+                            <!-- Histórico de Reservas -->
+                            <h3>Histórico de Reservas</h3>
+                                <ul id="historico-reservas">
+                            <!-- Itens serão preenchidos via JavaScript -->
+                                </ul>
+                         </div>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
